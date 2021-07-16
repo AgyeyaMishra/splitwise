@@ -3,6 +3,9 @@
 
 using namespace std;
 
+//Number of persons (or vertices in the graph)
+#define number_of_persons 3
+
 //A utility function that returns index of minimum value in array[]
 int get_Minimum(int array[])
 {
@@ -63,8 +66,42 @@ void minCashFlowRecursion(int amount[])
     amount[maxDebit] += minimum;
     
     //If minimum is the maximum amount to be
-    cout<<"Person "<<maxDebit<<"pays "<<minimum<<"to "<<maxCredit<<"."<<endl;
+    cout<<"Person "<<maxDebit<<" pays "<<minimum<<" to "<<maxCredit<<"."<<endl;
     
     //Recur for the amount array. Note that it is guaranteed that the recursion would terminate as either amount[maxCredit] or amount[maxDebit] becomes 0
     minCashFlowRecursion(amount);
+}
+
+//Given a set of persons as graph[] where graph[i][j] indicates the amount that person i needs to pay person j, this function finds and prints the minimum cash flow to settle all debts
+void minCashFlow(int graph[][number_of_persons])
+{
+    //Create an array amount[], initialize all value in it as 0
+    int amount[number_of_persons] = {0};
+    
+    //Calculate the net amount to be paid to person 'p' and stores it in amount[p]
+    //The value of amount[p] can be calculated by subtracting debts of 'p' from credits of 'p'
+    
+    for(int p = 0; p < number_of_persons; p++)
+    {
+        for(int i = 0; i < number_of_persons; i++)
+        {
+            amount[p] += (graph[i][p] - graph[p][i]);
+        }
+    }
+    
+    minCashFlowRecursion(amount);
+}
+
+//Driver function
+int main()
+{
+    //graph[i][j] indicates the amount that person i needs to pay person j
+    
+    int graph[number_of_persons][number_of_persons] = {{0, 1000, 2000},
+                                                       {0, 0, 5000},
+                                                       {0, 0, 0}};
+    //print the solution
+    minCashFlow(graph);
+    
+    return 0;
 }
