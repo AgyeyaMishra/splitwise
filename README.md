@@ -12,7 +12,7 @@ This is a ```C++``` program which is used to minimize the cash flow (or the numb
 
 ### Approach:
 
-The idea is to use Greedy algorithm where at every step, such that the program settle all amounts of one person and recur for remaining n-1 persons. 
+The idea is to use **Greedy Algorithm** where at every step, such that the program settle all amounts of one person and recur for remaining n-1 persons. 
 
 ### How to proceed?
 
