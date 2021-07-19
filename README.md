@@ -42,4 +42,5 @@ How to pick the first person in such a case?
 ### Complexity Analysis:
 
 Time Complexity - O(N^2) where N is the number of persons
+
 Algorithm Paradigm - Greedy
