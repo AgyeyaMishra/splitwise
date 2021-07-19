@@ -39,7 +39,7 @@ How to pick the first person in such a case?
 5. If x is the same as the maxCredit, then remove Pc from the set and recur for next n-1 persons.
 6. If x is same as maxDebit, then remove Pd from a set of persons and recur for next n-1 persons.
 
-### Complexity Analsysis:
+### Complexity Analysis:
 
 Time Complexity - O(N^2) where N is the number of persons
 Algorithm Paradigm - Greedy
