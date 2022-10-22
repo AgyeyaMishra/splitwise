@@ -8,6 +8,7 @@
 //C++ program to minimise cash flow among a set of friends who have borrowed money
 #include <iostream>
 
+//standard library that contains common functionality that we use in building all applications like containers, algorithms, etc.
 using namespace std;
 
 //Number of persons (or vertices in the graph)
