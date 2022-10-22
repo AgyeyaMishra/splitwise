@@ -12,7 +12,7 @@ This is a ```C++``` program that is used to minimize the cash flow (or the numbe
 
 ### Approach:
 
-The idea is to use **Greedy Algorithm** where at every step, such that the program settles all amounts of one person and recurs for remaining n-1 persons. 
+The idea is to use **Greedy Algorithm** where at every step, such that the program settles all amounts of one person and recurs for the remaining n-1 persons. 
 
 ### How to proceed?
 
@@ -27,7 +27,7 @@ This cash flow is not minimum; we have to minimize it. Then the final diagram wi
 How to pick the first person in such a case? 
 - To pick the first person, we first calculate the net amount for every person where the net amount is obtained by subtracting all debts (amounts to pay) from all credits (amounts to be paid). 
 - Once the net amount for every person is evaluated, we find two persons with maximum and minimum net amounts. These two persons are the most creditors and debtors. The person with a minimum of two is our first person to be settled and removed from the list. 
-- Let the minimum of two amounts be x. We pay ‘x’ amount from the maximum debtor to the maximum creditor and settle one person. 
+- Let the minimum of two amounts be x. We pay the ‘x’ amount from the maximum debtor to the maximum creditor and settle one person. 
 - If x is equal to the maximum debit, then the maximum debtor is settled, else the maximum creditor is settled.
 
 ### Algorithm:
